@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WorkoutMaker</string>
     <string name="question_one">Which category do you fit into?</string>
+    <string name="question_two">How many days off would you like in the weekdays?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
