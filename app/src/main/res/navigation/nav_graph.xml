@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivityFragment">
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.hfad.workoutmaker.FirstFragment"
-        tools:layout="@layout/fragment_first"
-        android:label="@string/first_fragment_label">
-
+        android:id="@+id/mainActivityFragment"
+        android:name="com.hfad.workoutmaker.MainActivityFragment"
+        android:label="fragment_main_activity"
+        tools:layout="@layout/fragment_main_activity" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_mainActivityFragment_to_bmiFragment"
+            app:destination="@id/bmiFragment" />
+        <action
+            android:id="@+id/action_mainActivityFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_mainActivityFragment_to_relaxFragment"
+            app:destination="@id/relaxFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.hfad.workoutmaker.SecondFragment"
-        tools:layout="@layout/fragment_second"
-        android:label="@string/second_fragment_label">
-
+        android:id="@+id/relaxFragment"
+        android:name="com.hfad.workoutmaker.RelaxFragment"
+        android:label="fragment_relax"
+        tools:layout="@layout/fragment_relax" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_relaxFragment_to_preferenceFragment"
+            app:destination="@id/preferenceFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/preferenceFragment"
+        android:name="com.hfad.workoutmaker.PreferenceFragment"
+        android:label="fragment_preference"
+        tools:layout="@layout/fragment_preference" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.hfad.workoutmaker.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/bmiFragment"
+        android:name="com.hfad.workoutmaker.BmiFragment"
+        android:label="fragment_bmi"
+        tools:layout="@layout/fragment_bmi" />
 </navigation>
