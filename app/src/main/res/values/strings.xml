@@ -2,6 +2,27 @@
     <string name="app_name">WorkoutMaker</string>
     <string name="question_one">Which category do you fit into?</string>
     <string name="question_two">How many days off would you like in the weekdays?</string>
+    <string name="question_three">Which equipment do you own (weights or no weights)?</string>
+    //buttons
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="one_day">One Day</string>
+    <string name="two_days">Two Day</string>
+    <string name="three_days">Three Day</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_bmi">BmiActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+    //titles
+    <string name="general_info">General Information</string>
+    //bodies of text for bmi screen
+    <string name="bmi_info_one">Most muscle shows for men at around 3-15% body fat, for women 10-17%</string>
+    <string name="bmi_info_two">Running long distance burns fat, while sprinting burns carbs</string>
+    <string name="bmi_info_three">Core workouts alone do not result in abs, it also requires a low fat percentage and good dieting</string>
+    //built by android studio
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
