@@ -28,13 +28,14 @@
         android:layout_marginTop="220dp"
         android:layout_marginEnd="157dp"
         android:layout_marginBottom="7dp"
-        android:text="Button"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
+        android:onClick="nextButton"
         app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BeginnerImage" />
+        app:layout_constraintTop_toBottomOf="@+id/BeginnerImage"
+        tools:ignore="OnClick" />
 
     <ImageView
         android:id="@+id/ExperiencedImage"
