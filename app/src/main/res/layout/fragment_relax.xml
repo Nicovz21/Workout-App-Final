@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/relax_image"
-        android:layout_width="474dp"
-        android:layout_height="237dp"
+        android:layout_width="358dp"
+        android:layout_height="179dp"
         android:layout_marginTop="62dp"
         android:src="@drawable/relaxationsmaller"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,18 +19,20 @@
 
     <ImageView
         android:id="@+id/dog_image"
-        android:layout_width="439dp"
-        android:layout_height="190dp"
+        android:layout_width="362dp"
+        android:layout_height="111dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="27dp"
         android:src="@drawable/dogsmaller"
+        app:layout_constraintBottom_toTopOf="@+id/one_day"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question_two" />
 
     <TextView
         android:id="@+id/question_two"
-        android:layout_width="387dp"
-        android:layout_height="62dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
@@ -48,40 +50,42 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="157dp"
         android:layout_marginEnd="161dp"
-        android:layout_marginBottom="23dp"
-        android:text="@string/next"
+        android:layout_marginBottom="16dp"
         android:onClick="nextButton"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick" />
 
     <Button
         android:id="@+id/one_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="97dp"
         android:text="@string/one_day"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/two_days"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dog_image" />
+        app:layout_constraintTop_toBottomOf="@+id/dog_image"
+        app:layout_constraintVertical_bias="0.23" />
 
     <Button
         android:id="@+id/two_days"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="17dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/two_days"
         app:layout_constraintBottom_toTopOf="@+id/next"
         app:layout_constraintEnd_toStartOf="@+id/three_days"
         app:layout_constraintStart_toEndOf="@+id/one_day"
-        app:layout_constraintTop_toBottomOf="@+id/dog_image" />
+        app:layout_constraintTop_toBottomOf="@+id/dog_image"
+        app:layout_constraintVertical_bias="0.45" />
 
     <Button
         android:id="@+id/three_days"
@@ -90,7 +94,7 @@
         android:layout_marginStart="26dp"
         android:layout_marginTop="17dp"
         android:layout_marginEnd="39dp"
-        android:layout_marginBottom="97dp"
+        android:layout_marginBottom="87dp"
         android:text="@string/three_days"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

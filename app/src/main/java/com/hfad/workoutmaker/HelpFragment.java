@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 public class HelpFragment extends Fragment {
 
 
-
     public HelpFragment() {
         // Required empty public constructor
     }
