@@ -8,9 +8,7 @@ public class Workout {
     private String experience;
     private String equipment;
     private String workout;
-    private String monday;
-    private String tuesday;
-    private String wednesday;
+
 
     public long getId() {
         return id;
@@ -30,15 +28,6 @@ public class Workout {
     public String getWorkout() {
         return workout;
     }
-    public String getMonday() {
-        return monday;
-    }
-    public String getTuesday() {
-        return tuesday;
-    }
-    public String getWednesday() {
-        return wednesday;
-    }
 
     public void setExperience(String experience) {
         this.experience = experience;
@@ -49,15 +38,7 @@ public class Workout {
     public void setWorkout(String workout) {
         this.workout = workout;
     }
-    public void setMonday(String monday) {
-        this.monday = monday;
-    }
-    public void setTuesday(String tuesday) {
-        this.tuesday = tuesday;
-    }
-    public void setWednesday(String wednesday) {
-        this.wednesday = wednesday;
-    }
+
 
     // Will be used by the ArrayAdapter in the ListView
     @Override
