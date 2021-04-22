@@ -1,9 +1,15 @@
 package com.hfad.workoutmaker;
 
 import android.app.Activity;
+import android.nfc.Tag;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,13 +19,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MainActivityFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class MainActivityFragment extends Fragment {
 
+public class MainActivityFragment extends Fragment implements View.OnClickListener{
+    NavController navController = null;
     private MainActivityListenser mActivity;
 
 
@@ -31,38 +33,41 @@ public class MainActivityFragment extends Fragment {
     public interface MainActivityListenser{
         void nextButton();
     }
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MainActivityFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MainActivityFragment newInstance(String param1, String param2) {
-        MainActivityFragment fragment = new MainActivityFragment();
-        Bundle args = new Bundle();
 
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //variable for myActivity
         Activity myActivity = getActivity();
-        //create inflater
-        View view =inflater.inflate(R.layout.fragment_main_activity, container, false);
-        // Inflate the layout for this fragment
-        return view;
+            //create inflater
+            View view =inflater.inflate(R.layout.fragment_main_activity, container, false);
+            // ... rest of body of onCreateView() ...
+            // Inflate the layout for this fragment
+            return view;
 
+
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
+        view.findViewById(R.id.BeginnerImage).setOnClickListener(this);
+        view.findViewById(R.id.ExperiencedImage).setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.BeginnerImage:
+                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment);
+                break;
+            case R.id.ExperiencedImage:
+                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment);
+                break;
+
+        }
 
     }
 }

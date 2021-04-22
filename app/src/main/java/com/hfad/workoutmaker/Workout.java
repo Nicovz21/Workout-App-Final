@@ -43,6 +43,6 @@ public class Workout {
     // Will be used by the ArrayAdapter in the ListView
     @Override
     public String toString() {
-        return experience;
+        return experience + "," + equipment + "," + workout;
     }
 }

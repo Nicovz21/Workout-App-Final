@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.hfad.workoutmaker.RelaxFragment"
+        class="com.hfad.workoutmaker.RelaxFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_relax" />

@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.hfad.workoutmaker.PreferenceFragment"
+        class="com.hfad.workoutmaker.PreferenceFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_preference" />

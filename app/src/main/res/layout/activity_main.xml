@@ -19,11 +19,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <fragment
-        android:id="@+id/fragment"
-        android:name="com.hfad.workoutmaker.MainActivityFragment"
+        android:id="@+id/nav_host_fragment"
+        android:name ="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_main_activity" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"
+        />
 
 
 

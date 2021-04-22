@@ -50,7 +50,7 @@ public class MainActivity extends ListActivity {
         ArrayAdapter<Workout> adapter = (ArrayAdapter<Workout>)getListAdapter();
         Workout workout = null;
         if(view.getId() == R.id.add) {
-            String[] workouts = new String[]{"yes", "t", "3", "4", "4", "5"};
+            String[] workouts = new String[]{"beginner", "weights"};
             int nextInt = new Random().nextInt(4);
             workout = dataSource.createWorkout(workouts[nextInt]);
             adapter.add(workout);

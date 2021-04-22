@@ -32,9 +32,11 @@ public class WorkoutsDataSource {
         dbHelper.close();
     }
 
-    public Workout createWorkout(String experience) {
+    public Workout createWorkout(String experience, String equipment) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_EXPERIENCE, experience);
+        values.put(MySQLiteHelper.COLUMN_EQUIPMENT, equipment);
+        //values.put(MySQLiteHelper.COLUMN_WORKOUT, workout);
         long insertId = database.insert(MySQLiteHelper.TABLE_EXERCISES,null, values);
         Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, allColumns, MySQLiteHelper.COLUMN_ID + "=" + insertId, null, null, null, null);
         cursor.moveToFirst();
@@ -64,13 +66,34 @@ public class WorkoutsDataSource {
         return workouts;
     }
     //getWorkoutbyExperience
-    //filter list by experience
-    //loop through getAllWorkouts
+    public String getWorkoutByExperience(){
+        //loop through getAllWorkouts
+        for(int i = 0; i< workouts.size(); i++){
+            //filter list by experience
+            if(workouts.contains("beginner")){
+                //return  workouts.indexOf(i).toString();
+            }
+            if(workouts.contains("experienced")){
+                //print this workout
+            }
+        }
+        return null;
+    }
 
     //getWorkoutbyEquipment
-    //filter list by equipment
-    //loop through getAllWorkouts
-
+    public String getWorkoutByEquipment(){
+        //loop through getAllWorkouts
+        for(int i = 0; i< workouts.size(); i++){
+            //filter list by equipment
+            if(workouts.contains("weights")){
+            //print this workout
+            }
+            if(workouts.contains("no weights")){
+                //print this workout
+            }
+        }
+        return null;
+    }
 
     private Workout cursorToWorkout(Cursor cursor) {
         Workout workout = new Workout();
@@ -78,4 +101,6 @@ public class WorkoutsDataSource {
         workout.setWorkout(cursor.getString(1));
         return workout;
     }
+
+
 }
