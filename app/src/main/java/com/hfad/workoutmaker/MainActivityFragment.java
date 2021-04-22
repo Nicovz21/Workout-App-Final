@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -20,16 +21,20 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import java.util.List;
+
 
 public class MainActivityFragment extends Fragment implements View.OnClickListener{
     NavController navController = null;
     public boolean experienced;
+    private  WorkoutsDataSource dataSource;
     private MainActivityListenser mActivity;
 
 
     public MainActivityFragment() {
         // Required empty public constructor
     }
+
 
 
 
@@ -52,6 +57,8 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
 
 
     }
+
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -75,5 +82,16 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
 
         }
 
+    }
+        @Override
+    public void onPause() {
+        super.onPause();
+        dataSource.close();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        dataSource.close();
     }
 }

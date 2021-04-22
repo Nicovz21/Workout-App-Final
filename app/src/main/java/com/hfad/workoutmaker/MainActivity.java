@@ -1,6 +1,7 @@
 package com.hfad.workoutmaker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 
@@ -16,17 +17,14 @@ import android.widget.Toast;
 import java.util.List;
 import java.util.Random;
 
-public class MainActivity extends ListActivity {
-    private  WorkoutsDataSource dataSource;
+public class MainActivity extends FragmentActivity {
+    public static WorkoutsDataSource dataSource;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         dataSource = new WorkoutsDataSource(this);
         dataSource.open();
-        List<Workout> allWorkouts = dataSource.getAllWorkouts();
-        ArrayAdapter<Workout> adapter = new ArrayAdapter<Workout>(this, android.R.layout.simple_list_item_1, allWorkouts);
-        setListAdapter(adapter);
         //create beginner workouts with no weights
         dataSource.createWorkout("beginner", "no weights", "push-ups (3 sets to failure)");
         dataSource.createWorkout("beginner", "no weights", "squats (3 sets to failure)");
@@ -48,27 +46,27 @@ public class MainActivity extends ListActivity {
         dataSource.createWorkout("experienced", "weights", "seated dumbbell calf-rasies (3 sets of 12)");
         dataSource.createWorkout("experienced", "weights", "lateral raises (3 sets of 12)");
 
-        adapter.notifyDataSetChanged();
 
 
-        //create object for both images
-        ImageView beginner_image = (ImageView) findViewById(R.id.BeginnerImage);
-        ImageView experienced_image = (ImageView) findViewById(R.id.ExperiencedImage);
-        //set on click listeners and establish what they do for both image buttons
-        //for experienced button
-        experienced_image.setOnClickListener(new ImageView.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                System.out.println("ExperiencedPressed");
-            }
-        });
-        //for beginner button
-        beginner_image.setOnClickListener(new ImageView.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                System.out.println("BeginnerPressed");
-            }
-        });
+
+//        //create object for both images
+//        ImageView beginner_image = (ImageView) findViewById(R.id.BeginnerImage);
+//        ImageView experienced_image = (ImageView) findViewById(R.id.ExperiencedImage);
+//        //set on click listeners and establish what they do for both image buttons
+//        //for experienced button
+//        experienced_image.setOnClickListener(new ImageView.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                System.out.println("ExperiencedPressed");
+//            }
+//        });
+//        //for beginner button
+//        beginner_image.setOnClickListener(new ImageView.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                System.out.println("BeginnerPressed");
+//            }
+//        });
 
     }
 //    public void onClick(View view){
@@ -104,22 +102,13 @@ public class MainActivity extends ListActivity {
 //            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 //            ft.commit();
 //
-//        }else {
-            Intent intent = new Intent(this, RelaxActivity.class);
-            Log.i("moveScreens", "secondScreen");
-            startActivity(intent);
+////        }else {
+//            Intent intent = new Intent(this, RelaxActivity.class);
+//            Log.i("moveScreens", "secondScreen");
+//            startActivity(intent);
         }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        dataSource.close();
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        dataSource.close();
-    }
-    //}
+
+
 }

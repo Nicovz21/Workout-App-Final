@@ -44,20 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relax_image" />
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginBottom="16dp"
-        android:onClick="nextButton"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="OnClick" />
+
 
     <Button
         android:id="@+id/one_day"
@@ -78,14 +65,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="127dp"
+
         android:text="@string/two_days"
-        app:layout_constraintBottom_toTopOf="@+id/next"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/three_days"
         app:layout_constraintStart_toEndOf="@+id/one_day"
-        app:layout_constraintTop_toBottomOf="@+id/dog_image"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintTop_toBottomOf="@+id/dog_image" />
 
     <Button
         android:id="@+id/three_days"
