@@ -12,14 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RelaxFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class RelaxFragment extends Fragment implements View.OnClickListener {
     NavController navController = null;
-
+    public int daysOff;
     public RelaxFragment() {
         // Required empty public constructor
     }
@@ -45,10 +41,16 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.BeginnerImage:
+            case R.id.one_day:
+                daysOff = 1;
                 navController.navigate(R.id.action_relaxFragment_to_preferenceFragment);
                 break;
-            case R.id.ExperiencedImage:
+            case R.id.two_days:
+                daysOff = 2;
+                navController.navigate(R.id.action_relaxFragment_to_preferenceFragment);
+                break;
+            case R.id.three_days:
+                daysOff = 3;
                 navController.navigate(R.id.action_relaxFragment_to_preferenceFragment);
                 break;
 

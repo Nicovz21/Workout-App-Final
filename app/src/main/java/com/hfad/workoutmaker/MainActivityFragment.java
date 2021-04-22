@@ -17,17 +17,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 
 public class MainActivityFragment extends Fragment implements View.OnClickListener{
     NavController navController = null;
+    public boolean experienced;
     private MainActivityListenser mActivity;
 
 
     public MainActivityFragment() {
         // Required empty public constructor
     }
+
+
 
     //create interface for fragment
     public interface MainActivityListenser{
@@ -61,9 +65,11 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.BeginnerImage:
+                experienced = false;
                 navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment);
                 break;
             case R.id.ExperiencedImage:
+                experienced = true;
                 navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment);
                 break;
 

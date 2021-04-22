@@ -32,12 +32,12 @@ public class WorkoutsDataSource {
         dbHelper.close();
     }
 
-    public Workout createWorkout(String experience, String equipment) {
-        ContentValues values = new ContentValues();
-        values.put(MySQLiteHelper.COLUMN_EXPERIENCE, experience);
-        values.put(MySQLiteHelper.COLUMN_EQUIPMENT, equipment);
-        //values.put(MySQLiteHelper.COLUMN_WORKOUT, workout);
-        long insertId = database.insert(MySQLiteHelper.TABLE_EXERCISES,null, values);
+    public Workout createWorkout(String experience, String equipment, String workout) {
+            ContentValues values = new ContentValues();
+                values.put(MySQLiteHelper.COLUMN_EXPERIENCE, experience);
+                values.put(MySQLiteHelper.COLUMN_EQUIPMENT, equipment);
+                values.put(MySQLiteHelper.COLUMN_WORKOUT, workout);
+            long insertId = database.insert(MySQLiteHelper.TABLE_EXERCISES, null, values);
         Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, allColumns, MySQLiteHelper.COLUMN_ID + "=" + insertId, null, null, null, null);
         cursor.moveToFirst();
         Workout newWorkout = cursorToWorkout(cursor);
@@ -54,7 +54,7 @@ public class WorkoutsDataSource {
     }
 //get specific workout from this method
     public List<Workout> getAllWorkouts() {
-        //select * from workoutss;
+        //select * from workouts;
         Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES,allColumns,null,null, null, null, null);
         cursor.moveToFirst();
         while(! cursor.isAfterLast()){
@@ -65,31 +65,47 @@ public class WorkoutsDataSource {
         cursor.close();
         return workouts;
     }
-    //getWorkoutbyExperience
-    public String getWorkoutByExperience(){
+    //get workout with experience: beginner and no weights
+    public String getWorkoutByBeginnerAndNoWeights(){
         //loop through getAllWorkouts
         for(int i = 0; i< workouts.size(); i++){
             //filter list by experience
-            if(workouts.contains("beginner")){
+            if(workouts.contains("beginner") && workouts.contains("no weights")){
                 //return  workouts.indexOf(i).toString();
             }
-            if(workouts.contains("experienced")){
-                //print this workout
+        }
+        return null;
+    }
+    //get workout with experience: beginner and weights
+    public String getWorkoutByBeginnerAndWeights(){
+        //loop through getAllWorkouts
+        for(int i = 0; i< workouts.size(); i++){
+            //filter list by experience
+            if(workouts.contains("beginner") && workouts.contains("weights")){
+                //return  workouts.indexOf(i).toString();
             }
         }
         return null;
     }
 
-    //getWorkoutbyEquipment
-    public String getWorkoutByEquipment(){
+    //get workout with experience: experienced and no weights
+    public String getWorkoutByExperiencedAndNoWeights(){
         //loop through getAllWorkouts
         for(int i = 0; i< workouts.size(); i++){
             //filter list by equipment
-            if(workouts.contains("weights")){
-            //print this workout
+            if(workouts.contains("experienced") && workouts.contains("no weights")){
+                //return  workouts.indexOf(i).toString();
             }
-            if(workouts.contains("no weights")){
-                //print this workout
+        }
+        return null;
+    }
+    //get workout with experience: experienced and weights
+    public String getWorkoutByExperiencedAndWeights(){
+        //loop through getAllWorkouts
+        for(int i = 0; i< workouts.size(); i++){
+            //filter list by equipment
+            if(workouts.contains("experienced") && workouts.contains("weights")){
+                //return  workouts.indexOf(i).toString();
             }
         }
         return null;
@@ -101,6 +117,7 @@ public class WorkoutsDataSource {
         workout.setWorkout(cursor.getString(1));
         return workout;
     }
+
 
 
 }

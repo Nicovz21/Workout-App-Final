@@ -12,14 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PreferenceFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class PreferenceFragment extends Fragment implements View.OnClickListener {
     NavController navController = null;
-
+    public Boolean weights;
 
     public PreferenceFragment() {
         // Required empty public constructor
@@ -48,11 +44,12 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.BeginnerImage:
+            case R.id.equipment:
+                weights = true;
                 //navController.navigate(R.id.action_preferenceFragment_to_workoutActivity);
                 break;
-            case R.id.ExperiencedImage:
-
+            case R.id.no_weights:
+                weights = false;
                 break;
 
         }
