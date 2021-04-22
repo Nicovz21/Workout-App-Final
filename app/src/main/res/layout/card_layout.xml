@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_view"
+    android:layout_margin="5dp"
+    tools:context=".WorkoutActivity">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/weekday_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monday"
+            android:gravity="center"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="132dp" />
+
+        <TextView
+            android:id="@+id/workout_text"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:gravity="bottom"
+            android:text="List of workouts"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="159dp" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
