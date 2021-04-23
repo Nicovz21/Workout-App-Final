@@ -19,6 +19,7 @@ import java.util.Random;
 
 public class MainActivity extends FragmentActivity {
     public static WorkoutsDataSource dataSource;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -83,7 +83,9 @@ public class WorkoutsDataSource {
         return workoutArray;
     }
     public String getTest(){
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
+        String test = "hello";
+        //Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
+        return test;
     }
 
 
