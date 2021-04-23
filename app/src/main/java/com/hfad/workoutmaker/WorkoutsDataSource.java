@@ -19,6 +19,9 @@ public class WorkoutsDataSource {
     private MySQLiteHelper dbHelper;
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_EXPERIENCE, MySQLiteHelper.COLUMN_EQUIPMENT, MySQLiteHelper.COLUMN_WORKOUT };
+    private String[] workoutColumns = { MySQLiteHelper.COLUMN_ID,
+            MySQLiteHelper.COLUMN_WORKOUT };
+    public ArrayList<String> workoutArray = new ArrayList<String>();;
 
     public WorkoutsDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -67,13 +70,15 @@ public class WorkoutsDataSource {
     }
     //get workout with experience: beginner and no weights
     public String getWorkoutByBeginnerAndNoWeights(){
-        //loop through getAllWorkouts
-        for(int i = 0; i< workouts.size(); i++){
-            //filter list by experience
-            if(workouts.contains("beginner") && workouts.contains("no weights")){
-                //return  workouts.indexOf(i).toString();
-            }
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
+        while(!cursor.isLast()){
+            String workout1 =cursor.getString(1);
+            workoutArray.add(workout1);
+            cursor.moveToNext();
+
         }
+        //return string array
         return null;
     }
     //get workout with experience: beginner and weights
@@ -105,7 +110,7 @@ public class WorkoutsDataSource {
         for(int i = 0; i< workouts.size(); i++){
             //filter list by equipment
             if(workouts.contains("experienced") && workouts.contains("weights")){
-                //return  workouts.indexOf(i).toString();
+                //return  workouts.indexOf(i);
             }
         }
         return null;
