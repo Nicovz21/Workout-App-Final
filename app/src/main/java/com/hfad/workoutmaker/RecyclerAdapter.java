@@ -19,7 +19,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     private String[] workouts = {"Item one details",
             "Item two details", "Item three details",
             "Item four details", "Item five details"};
-    //
 
     @NonNull
     @Override
@@ -32,8 +31,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int pos) {
-       viewHolder.weekdays.setText(weekdays[pos]);
-     //   viewHolder.workouts.setText(workouts[pos]);
+        viewHolder.weekdays.setText(weekdays[pos]);
+       // viewHolder.workouts.setText(workouts[pos]);
     }
 
     @Override
@@ -44,13 +43,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView weekdays;
-     //   public TextView workouts;
+       // public TextView workouts;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             weekdays = (TextView)weekdays.findViewById(R.id.weekday_text);
-         //   workouts = (TextView)workouts.findViewById(R.id.workout_text);
+//            workouts = (TextView)workouts.findViewById(R.id.workout_text);
         }
     }
 }
