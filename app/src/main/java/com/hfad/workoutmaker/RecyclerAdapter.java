@@ -32,7 +32,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int pos) {
-    //    viewHolder.weekdays.setText(weekdays[pos]);
+       viewHolder.weekdays.setText(weekdays[pos]);
      //   viewHolder.workouts.setText(workouts[pos]);
     }
 
@@ -43,13 +43,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-     //   public TextView weekdays;
+        public TextView weekdays;
      //   public TextView workouts;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-        //    weekdays = (TextView)weekdays.findViewById(R.id.weekday_text);
+            weekdays = (TextView)weekdays.findViewById(R.id.weekday_text);
          //   workouts = (TextView)workouts.findViewById(R.id.workout_text);
         }
     }
