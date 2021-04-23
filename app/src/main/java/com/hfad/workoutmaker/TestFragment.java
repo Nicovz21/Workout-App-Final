@@ -37,8 +37,8 @@ public class TestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inf = inflater.inflate(R.layout.fragment_test, container, false);
-        TextView tv = (TextView) inf.findViewById(R.id.testText);
-        tv.setText(dataSource.getWorkoutByBeginnerAndNoWeights().toString());
+//        TextView tv = (TextView) inf.findViewById(R.id.testText);
+//        tv.setText(dataSource.getWorkoutByBeginnerAndNoWeights().toString());
         // Inflate the layout for this fragment
         return inf;
 

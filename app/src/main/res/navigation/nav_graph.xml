@@ -32,11 +32,7 @@
         android:id="@+id/preferenceFragment"
         android:name="com.hfad.workoutmaker.PreferenceFragment"
         android:label="fragment_preference"
-        tools:layout="@layout/fragment_preference" >
-        <action
-            android:id="@+id/action_preferenceFragment_to_testFragment"
-            app:destination="@id/testFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_preference" />
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.hfad.workoutmaker.HelpFragment"
@@ -47,9 +43,4 @@
         android:name="com.hfad.workoutmaker.BmiFragment"
         android:label="fragment_bmi"
         tools:layout="@layout/fragment_bmi" />
-    <fragment
-        android:id="@+id/testFragment"
-        android:name="com.hfad.workoutmaker.TestFragment"
-        android:label="fragment_test"
-        tools:layout="@layout/fragment_test" />
 </navigation>

@@ -19,6 +19,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     private String[] workouts = {"Item one details",
             "Item two details", "Item three details",
             "Item four details", "Item five details"};
+    //
 
     @NonNull
     @Override
