@@ -83,15 +83,5 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         }
 
     }
-        @Override
-    public void onPause() {
-        super.onPause();
-        dataSource.close();
-    }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        dataSource.close();
-    }
 }
