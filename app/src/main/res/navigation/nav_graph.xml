@@ -48,11 +48,6 @@
         android:label="fragment_bmi"
         tools:layout="@layout/fragment_bmi" />
     <fragment
-        android:id="@+id/workoutFragment"
-        android:name="com.hfad.workoutmaker.WorkoutFragment"
-        android:label="fragment_workout"
-        tools:layout="@layout/fragment_workout" />
-    <fragment
         android:id="@+id/testFragment"
         android:name="com.hfad.workoutmaker.TestFragment"
         android:label="fragment_test"

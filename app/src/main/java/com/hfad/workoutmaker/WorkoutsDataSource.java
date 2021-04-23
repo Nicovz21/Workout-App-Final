@@ -69,17 +69,21 @@ public class WorkoutsDataSource {
         return workouts;
     }
     //get workout with experience: beginner and no weights
-    public String getWorkoutByBeginnerAndNoWeights(){
+    public ArrayList<String> getWorkoutByBeginnerAndNoWeights(){
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
         while(!cursor.isLast()){
-            String workout1 =cursor.getString(1);
-            workoutArray.add(workout1);
-            cursor.moveToNext();
+            int i=0;
+            String workouts =cursor.getString(i++);
+            workoutArray.add(workouts);
 
         }
+
         //return string array
-        return null;
+        return workoutArray;
+    }
+    public String getTest(){
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
     }
 
 

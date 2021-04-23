@@ -52,7 +52,7 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                 break;
             case R.id.no_weights:
                 weights = false;
-                navController.navigate(R.id.action_preferenceFragment_to_testFragment);
+                //navController.navigate(R.id.action_preferenceFragment_to_testFragment);
                 break;
 
         }

@@ -7,19 +7,22 @@ import static org.junit.Assert.*;
 
 public class WorkoutTest {
 private Workout workout;
+private WorkoutsDataSource ds;
     @Before
     public void setUp() throws Exception {
         workout = new Workout();
+
     }
 
     @Test
     public void getId() {
-        assertNotNull(workout);
+        assertNotNull(ds.getWorkoutByBeginnerAndNoWeights());
     }
 
 
     @Test
     public void getExperience() {
+
         assertNotNull(workout);
     }
 
@@ -35,6 +38,6 @@ private Workout workout;
 
     @Test
     public void testToString() {
-        assertNotNull(workout);
+        assertNotNull(ds.getWorkoutByBeginnerAndNoWeights());
     }
 }
