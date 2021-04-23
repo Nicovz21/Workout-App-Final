@@ -9,10 +9,10 @@
     tools:context=".WorkoutActivity">
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/weekday_text"
             android:layout_width="match_parent"
@@ -30,7 +30,6 @@
             android:text="List of workouts"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="159dp" />
-
 
     </RelativeLayout>
 
