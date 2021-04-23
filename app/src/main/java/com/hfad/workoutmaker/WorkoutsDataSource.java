@@ -17,12 +17,11 @@ public class WorkoutsDataSource {
     // Database fields
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
-    private String[] allColumns = {MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_EXPERIENCE, MySQLiteHelper.COLUMN_EQUIPMENT, MySQLiteHelper.COLUMN_WORKOUT};
-    private String[] workoutColumns = {MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_WORKOUT};
-    public ArrayList<String> workoutArray = new ArrayList<String>();
-    ;
+    private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
+            MySQLiteHelper.COLUMN_EXPERIENCE, MySQLiteHelper.COLUMN_EQUIPMENT, MySQLiteHelper.COLUMN_WORKOUT };
+    private String[] workoutColumns = { MySQLiteHelper.COLUMN_ID,
+            MySQLiteHelper.COLUMN_WORKOUT };
+    public ArrayList<String> workoutArray = new ArrayList<String>();;
 
     public WorkoutsDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -31,21 +30,17 @@ public class WorkoutsDataSource {
     public void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
     }
-
-    public SQLiteDatabase getDatabase() {
-        return database;
-    }
-
-    public void close() {
+    public  SQLiteDatabase getDatabase() {return database;}
+    public void close(){
         dbHelper.close();
     }
 
     public Workout createWorkout(String experience, String equipment, String workout) {
-        ContentValues values = new ContentValues();
-        values.put(MySQLiteHelper.COLUMN_EXPERIENCE, experience);
-        values.put(MySQLiteHelper.COLUMN_EQUIPMENT, equipment);
-        values.put(MySQLiteHelper.COLUMN_WORKOUT, workout);
-        long insertId = database.insert(MySQLiteHelper.TABLE_EXERCISES, null, values);
+            ContentValues values = new ContentValues();
+                values.put(MySQLiteHelper.COLUMN_EXPERIENCE, experience);
+                values.put(MySQLiteHelper.COLUMN_EQUIPMENT, equipment);
+                values.put(MySQLiteHelper.COLUMN_WORKOUT, workout);
+            long insertId = database.insert(MySQLiteHelper.TABLE_EXERCISES, null, values);
         Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, allColumns, MySQLiteHelper.COLUMN_ID + "=" + insertId, null, null, null, null);
         cursor.moveToFirst();
         Workout newWorkout = cursorToWorkout(cursor);
@@ -58,15 +53,14 @@ public class WorkoutsDataSource {
 
     public void deleteWorkout(Workout workout) {
         long id = workout.getId();
-        database.delete(MySQLiteHelper.TABLE_EXERCISES, MySQLiteHelper.COLUMN_ID + "=" + id, null);
+        database.delete(MySQLiteHelper.TABLE_EXERCISES, MySQLiteHelper.COLUMN_ID + "="+ id, null);
     }
-
-    //get specific workout from this method
+//get specific workout from this method
     public List<Workout> getAllWorkouts() {
         //select * from workouts;
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, allColumns, null, null, null, null, null);
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES,allColumns,null,null, null, null, null);
         cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
+        while(! cursor.isAfterLast()){
             Workout workout = cursorToWorkout(cursor);
             workouts.add(workout);
             cursor.moveToNext();
@@ -74,14 +68,13 @@ public class WorkoutsDataSource {
         cursor.close();
         return workouts;
     }
-
     //get workout with experience: beginner and no weights
-    public ArrayList<String> getWorkoutByBeginnerAndNoWeights() {
+    public ArrayList<String> getWorkoutByBeginnerAndNoWeights(){
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
-        while (!cursor.isLast()) {
-            int i = 0;
-            String workouts = cursor.getString(i++);
+        while(!cursor.isLast()){
+            int i=0;
+            String workouts =cursor.getString(i++);
             workoutArray.add(workouts);
 
         }
@@ -89,11 +82,11 @@ public class WorkoutsDataSource {
         //return string array
         return workoutArray;
     }
-
-    public void getTest() {
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
+    public String getTest(){
+        String test = "hello";
+        //Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
+        return test;
     }
-
 
 
     //get workout with experience: beginner and weights
