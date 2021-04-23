@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class TestFragment extends Fragment {
     NavController navController = null;
-    public WorkoutsDataSource dataSource;
+
     public TestFragment() {
         // Required empty public constructor
     }
@@ -38,7 +38,7 @@ public class TestFragment extends Fragment {
                              Bundle savedInstanceState) {
         View inf = inflater.inflate(R.layout.fragment_test, container, false);
         TextView tv = (TextView) inf.findViewById(R.id.testText);
-        tv.setText(dataSource.getTest());
+        tv.setText(MainActivity.dataSource.getWorkoutByBeginnerAndNoWeights().toString());
         // Inflate the layout for this fragment
         return inf;
 
