@@ -71,7 +71,7 @@ public class WorkoutsDataSource {
     //get workout with experience: beginner and no weights
     public ArrayList<String> getWorkoutByBeginnerAndNoWeights(){
 
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_EXERCISES, workoutColumns, MySQLiteHelper.COLUMN_EXPERIENCE + "=" + "beginner" + "AND" + "" + MySQLiteHelper.COLUMN_EQUIPMENT + "=" + "no weights", null, null, null, null);
         while(!cursor.isLast()){
             int i=0;
             String workouts =cursor.getString(i++);
