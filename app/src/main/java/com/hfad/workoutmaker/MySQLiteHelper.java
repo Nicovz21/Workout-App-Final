@@ -22,16 +22,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     // Database creation sql statement
 
-
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
+//create table with strings made above
     @Override
     public void onCreate(SQLiteDatabase database) {
         database.execSQL("create table " + TABLE_EXERCISES +" (_id INTEGER PRIMARY KEY AUTOINCREMENT,experience TEXT, equipment TEXT,workout TEXT)");
     }
-
+//upgrade table version
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.w(MySQLiteHelper.class.getName(),
@@ -40,6 +39,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_EXERCISES);
         onCreate(db);
     }
+    //insert data into data table
     public boolean insertData(String experience, String equipment, String workout){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -76,10 +76,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         Cursor res = db.query(TABLE_EXERCISES,new String[]{COLUMN_ID,COLUMN_EXPERIENCE, COLUMN_EQUIPMENT, COLUMN_WORKOUT}, COLUMN_EXPERIENCE + "=?" + " AND" +" "+ COLUMN_EQUIPMENT + "=?",new String[]{"experienced","weights"},null,null,null);
         return res;
     }
+    //delete specific data in data table
     public Integer deleteData(String id){
         SQLiteDatabase db = this.getWritableDatabase();
        return db.delete(TABLE_EXERCISES,"_id = ?",new String[] {id});
     }
+    //delete all data in data table
     public void clearDatabase() {
         SQLiteDatabase db = this.getWritableDatabase();
         String clearDBQuery = "DELETE FROM "+TABLE_EXERCISES;

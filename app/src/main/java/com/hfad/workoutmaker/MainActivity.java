@@ -24,7 +24,7 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//
+//un-comment to re-create the database
 //        dataSource = new WorkoutsDataSource(this);
 //        dataSource.open();
 //        //create beginner workouts with no weights
@@ -51,63 +51,6 @@ public class MainActivity extends FragmentActivity {
 
 
 
-//        //create object for both images
-//        ImageView beginner_image = (ImageView) findViewById(R.id.BeginnerImage);
-//        ImageView experienced_image = (ImageView) findViewById(R.id.ExperiencedImage);
-//        //set on click listeners and establish what they do for both image buttons
-//        //for experienced button
-//        experienced_image.setOnClickListener(new ImageView.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                System.out.println("ExperiencedPressed");
-//            }
-//        });
-//        //for beginner button
-//        beginner_image.setOnClickListener(new ImageView.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                System.out.println("BeginnerPressed");
-//            }
-//        });
-
-    }
-//    public void onClick(View view){
-//        ArrayAdapter<Workout> adapter = (ArrayAdapter<Workout>)getListAdapter();
-//        Workout workout = null;
-//        if(view.getId() == R.id.add) {
-//            String[] workouts = new String[]{"weights"};
-//            String[] workouts2 = new String[]{"weights"};
-//            String[] workouts3 = new String[]{"weights"};
-//            int nextInt = new Random().nextInt(4);
-//            workout = dataSource.createWorkout(workouts[nextInt], workouts2[nextInt], workouts3[nextInt]);
-//            dataSource.createWorkout("beginner", "none", "pushups");
-//            adapter.add(workout);
-//        }else {
-//            if (getListAdapter().getCount() > 0) {
-//                workout = (Workout) getListAdapter().getItem(0);
-//                dataSource.deleteWorkout(workout);
-//                adapter.remove(workout);
-//            }
-//        }
-//        adapter.notifyDataSetChanged();
-//    }
-
-
-    public void nextButton(View view) {
-//        View fragmentContainer = findViewById(R.id.fragment_container);
-//        if(fragmentContainer != null){
-//            HoroscopeDetail frag = new HoroscopeDetail();
-//            frag.setHoroscopeFact(fact);
-//            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//            ft.replace(R.id.fragment_container, frag);
-//            ft.addToBackStack(null);
-//            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-//            ft.commit();
-//
-////        }else {
-//            Intent intent = new Intent(this, RelaxActivity.class);
-//            Log.i("moveScreens", "secondScreen");
-//            startActivity(intent);
         }
 
 

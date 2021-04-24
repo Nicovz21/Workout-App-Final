@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">WorkoutMaker</string>
-    <string name="question_one">Which category do you fit into?</string>
+    <string name="question_one">Which category do you fit into? (top = not experienced) (bottom = experienced)</string>
     <string name="question_two">How many days off would you like in the weekdays?</string>
-    <string name="question_three">Which equipment do you own (weights or no weights)?</string>
+    <string name="question_three">Which equipment do you own (weights (on left) or no weights (on right))?</string>
     //buttons
     <string name="next">Next</string>
     <string name="back">Back</string>

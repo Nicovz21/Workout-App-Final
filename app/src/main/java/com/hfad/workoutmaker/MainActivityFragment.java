@@ -55,14 +55,13 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
 
             //create inflater
             View view =inflater.inflate(R.layout.fragment_main_activity, container, false);
-            // ... rest of body of onCreateView() ...
             // Inflate the layout for this fragment
             return view;
 
 
     }
 
-
+//click listeners for images
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -71,18 +70,22 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         view.findViewById(R.id.ExperiencedImage).setOnClickListener(this);
 
     }
-
+//case by case on which image is clicked
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.BeginnerImage:
+                //bundle made to transport boolean
                 Bundle bundle = new Bundle();
+                //not experienced
                 experienced = false;
                 bundle.putBoolean("experience", experienced);
                 navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment, bundle);
                 break;
             case R.id.ExperiencedImage:
+                //bundle made to transport boolean
                 bundle = new Bundle();
+                //experienced
                 experienced = true;
                 bundle.putBoolean("experience", experienced);
                 navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment, bundle);

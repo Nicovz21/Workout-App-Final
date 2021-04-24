@@ -58,10 +58,24 @@ public class CardViewFragment extends Fragment {
         wedText = (TextView) inf.findViewById(R.id.wednesday_workout);
         thursText = (TextView) inf.findViewById(R.id.thursday_workout);
         friText = (TextView) inf.findViewById(R.id.friday_workout);
-        //un comment to test values
+
+        //un-comment to test values
         //friText.setText("days off"+experienced +daysOff + weights);
         //method that decides what to display
         viewAll();
+        //if days off selected, make the days rest days
+        if(daysOff == 1){
+            wedText.setText("Rest Day");
+        }
+        if(daysOff ==2){
+            wedText.setText("Rest Day");
+            thursText.setText("Rest Day");
+        }
+        if(daysOff ==3){
+            wedText.setText("Rest Day");
+            thursText.setText("Rest Day");
+            friText.setText("Rest Day");
+        }
         return inf;
     }
     //decides what to display based on choices
@@ -77,11 +91,13 @@ public class CardViewFragment extends Fragment {
                 for (workoutNumber = 2; res.moveToNext(); workoutNumber++) {
                     buffer.append(workoutNumber + ":" + res.getString(3) + " ");
                 }
-                mondayText.setText(buffer.toString());
-                tuesdayText.setText(buffer.toString());
-                wedText.setText(buffer.toString());
-                thursText.setText(buffer.toString());
-                friText.setText(buffer.toString());
+
+                    mondayText.setText(buffer.toString());
+                    tuesdayText.setText(buffer.toString());
+                    wedText.setText(buffer.toString());
+                    thursText.setText(buffer.toString());
+                    friText.setText(buffer.toString());
+
             }
 
             myDb.close();

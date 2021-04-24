@@ -28,20 +28,21 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
     }
 
 
-
+//on create method
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         experienced = getArguments().getBoolean("experience");
     }
 
-
+//
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
         view.findViewById(R.id.one_day).setOnClickListener(this);
         view.findViewById(R.id.two_days).setOnClickListener(this);
+        view.findViewById(R.id.three_days).setOnClickListener(this);
     }
 
     @Override
@@ -74,7 +75,7 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.three_days:
                 bundle = new Bundle();
-                daysOff = 2;
+                daysOff = 3;
                 bundle.putInt("days off", daysOff);
                 bundle.putBoolean("experience", experienced);
                 navController.navigate(R.id.action_relaxFragment_to_preferenceFragment,bundle);
