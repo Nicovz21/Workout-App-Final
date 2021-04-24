@@ -20,7 +20,9 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
     public PreferenceFragment() {
         // Required empty public constructor
     }
-
+    public boolean getWeightsValue(){
+        return weights;
+    }
 
 
     @Override
@@ -48,11 +50,11 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
         switch (view.getId()){
             case R.id.weights:
                 weights = true;
-                navController.navigate(R.id.action_preferenceFragment_to_testFragment);
+                navController.navigate(R.id.action_preferenceFragment_to_testCardViewFragment);
                 break;
             case R.id.no_weights:
                 weights = false;
-                //navController.navigate(R.id.action_preferenceFragment_to_testFragment);
+                navController.navigate(R.id.action_preferenceFragment_to_testCardViewFragment);
                 break;
 
         }

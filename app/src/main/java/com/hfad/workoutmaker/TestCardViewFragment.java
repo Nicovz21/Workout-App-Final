@@ -1,64 +1,100 @@
 package com.hfad.workoutmaker;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TestCardViewFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class TestCardViewFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    NavController navController = null;
+    MySQLiteHelper myDb;
+    TextView mondayText, tuesdayText, wedText, thursText, friText;
+    PreferenceFragment preference;
+    int daysoff;
     public TestCardViewFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TestCardViewFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TestCardViewFragment newInstance(String param1, String param2) {
-        TestCardViewFragment fragment = new TestCardViewFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test_card_view, container, false);
+        myDb = new MySQLiteHelper(getActivity());
+//        Bundle bundle = this.getArguments();
+//        Integer relaxdays = bundle.getInt("days off");
+//        daysoff = relaxdays;
+        View inf = inflater.inflate(R.layout.fragment_test_card_view, container, false);
+        mondayText = (TextView) inf.findViewById(R.id.monday_workout);
+        tuesdayText = (TextView) inf.findViewById(R.id.tuesday_workout);
+        wedText = (TextView) inf.findViewById(R.id.wednesday_workout);
+        thursText = (TextView) inf.findViewById(R.id.thursday_workout);
+        friText = (TextView) inf.findViewById(R.id.friday_workout);
+        viewAll();
+        return inf;
+    }
+    public void viewAll() {
+        Cursor res = myDb.getBeginnerAndEquipmentData();
+        StringBuffer buffer = new StringBuffer();
+        while (res.moveToNext()){
+            int workoutNumber = 1;
+            //String experience = res.getString(1);
+            //buffer.append("Id :" + res.getString(0)+ "\n");
+            //buffer.append("experience :" + experience+ "\n");
+            //buffer.append("equipment :" + res.getString(2)+ "\n");
+            buffer.append(workoutNumber + ":" + res.getString(3) + " ");
+            for(workoutNumber = 2; res.moveToNext(); workoutNumber++) {
+                buffer.append(workoutNumber + ":" + res.getString(3) + " ");
+            }
+            mondayText.setText(buffer.toString());
+            tuesdayText.setText(buffer.toString());
+            wedText.setText(buffer.toString());
+            thursText.setText(buffer.toString());
+//            if(daysoff == 1) {
+//                mondayText.setText(buffer.toString());
+//                tuesdayText.setText(buffer.toString());
+//                wedText.setText(buffer.toString());
+//                thursText.setText(buffer.toString());
+//            }
+//            if(daysoff == 2) {
+//                mondayText.setText(buffer.toString());
+//                tuesdayText.setText(buffer.toString());
+//                wedText.setText(buffer.toString());
+//            }
+//            if(daysoff == 3) {
+//                mondayText.setText(buffer.toString());
+//                tuesdayText.setText(buffer.toString());
+//            }
+
+
+
+        }
+
+
+        //showMessage("Data",buffer.toString());
+        myDb.close();
+
     }
 }
