@@ -48,7 +48,7 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
         switch (view.getId()){
             case R.id.weights:
                 weights = true;
-                navController.navigate(R.id.action_preferenceFragment_to_testFragment);
+                navController.navigate(R.id.action_preferenceFragment_to_workoutFragment);
                 break;
             case R.id.no_weights:
                 weights = false;
