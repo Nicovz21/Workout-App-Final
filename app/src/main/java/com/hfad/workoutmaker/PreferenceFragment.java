@@ -15,19 +15,22 @@ import android.view.ViewGroup;
 
 public class PreferenceFragment extends Fragment implements View.OnClickListener {
     NavController navController = null;
+    int daysOff;
     public Boolean weights;
+    public boolean experienced;
 
     public PreferenceFragment() {
         // Required empty public constructor
     }
-    public boolean getWeightsValue(){
-        return weights;
-    }
+
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        experienced = getArguments().getBoolean("experience");
+        daysOff = getArguments().getInt("days off");
+
     }
 
 
@@ -49,12 +52,21 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.weights:
+                Bundle bundle = new Bundle();
                 weights = true;
-                navController.navigate(R.id.action_preferenceFragment_to_testCardViewFragment);
+                bundle.putBoolean("weights", weights);
+                bundle.putInt("days off", daysOff);
+                bundle.putBoolean("experience", experienced);
+
+                navController.navigate(R.id.action_preferenceFragment_to_testCardViewFragment, bundle);
                 break;
             case R.id.no_weights:
+                bundle = new Bundle();
                 weights = false;
-                navController.navigate(R.id.action_preferenceFragment_to_testCardViewFragment);
+                bundle.putBoolean("weights", weights);
+                bundle.putInt("days off", daysOff);
+                bundle.putBoolean("experience", experienced);
+                navController.navigate(R.id.action_preferenceFragment_to_testCardViewFragment, bundle);
                 break;
 
         }

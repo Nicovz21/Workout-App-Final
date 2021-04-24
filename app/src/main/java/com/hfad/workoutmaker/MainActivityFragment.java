@@ -27,9 +27,6 @@ import java.util.List;
 public class MainActivityFragment extends Fragment implements View.OnClickListener{
     NavController navController = null;
 
-    public boolean isExperienced() {
-        return experienced;
-    }
 
     public boolean experienced;
 
@@ -79,12 +76,16 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.BeginnerImage:
+                Bundle bundle = new Bundle();
                 experienced = false;
-                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment);
+                bundle.putBoolean("experience", experienced);
+                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment, bundle);
                 break;
             case R.id.ExperiencedImage:
+                bundle = new Bundle();
                 experienced = true;
-                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment);
+                bundle.putBoolean("experience", experienced);
+                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment, bundle);
                 break;
 
         }

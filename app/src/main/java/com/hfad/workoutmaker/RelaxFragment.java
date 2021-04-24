@@ -14,11 +14,15 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 public class RelaxFragment extends Fragment implements View.OnClickListener {
+
     NavController navController = null;
     public int daysOff;
+    public boolean experienced;
+    Button oneDay,twoDays,threeDays;
     public RelaxFragment() {
         // Required empty public constructor
     }
@@ -28,7 +32,9 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        experienced = getArguments().getBoolean("experience");
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -37,35 +43,43 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.one_day).setOnClickListener(this);
         view.findViewById(R.id.two_days).setOnClickListener(this);
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_relax, container, false);
+        View v = inflater.inflate(R.layout.fragment_relax, container, false);
+
+        return v;
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.one_day:
-                navController.navigate(R.id.action_relaxFragment_to_preferenceFragment);
-                daysOff = 1;
-                //pass data from one fragment to another
                 Bundle bundle = new Bundle();
+                daysOff = 1;
                 bundle.putInt("days off", daysOff);
-                //setup fragment we are sending the bundle too
-
+                bundle.putBoolean("experience", experienced);
+                navController.navigate(R.id.action_relaxFragment_to_preferenceFragment, bundle);
 
                 break;
             case R.id.two_days:
+                bundle = new Bundle();
                 daysOff = 2;
-                navController.navigate(R.id.action_relaxFragment_to_preferenceFragment);
+                bundle.putInt("days off", daysOff);
+                bundle.putBoolean("experience", experienced);
+                navController.navigate(R.id.action_relaxFragment_to_preferenceFragment,bundle);
+
                 break;
             case R.id.three_days:
-                daysOff = 3;
-                navController.navigate(R.id.action_relaxFragment_to_preferenceFragment);
-                break;
+                bundle = new Bundle();
+                daysOff = 2;
+                bundle.putInt("days off", daysOff);
+                bundle.putBoolean("experience", experienced);
+                navController.navigate(R.id.action_relaxFragment_to_preferenceFragment,bundle);
 
+                break;
         }
 
     }

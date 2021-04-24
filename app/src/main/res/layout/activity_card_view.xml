@@ -18,8 +18,8 @@
 
     <fragment
         android:id="@+id/fragment"
-        class="com.hfad.workoutmaker.TestCardViewFragment"
+        class="com.hfad.workoutmaker.CardViewFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_test_card_view" />
+        tools:layout="@layout/fragment_card_view" />
 </RelativeLayout>

@@ -68,7 +68,7 @@ public class TestFragment extends Fragment {
                     public void onClick(View v) {
                         //Integer deletedRows = myDb.deleteData("1");
                         myDb.clearDatabase();
-                        if(myDb.getBeginnerAndEquipmentData()== null)
+                        if(myDb.getBeginnerAndNoEquipmentData()== null)
                             Toast.makeText(getActivity(), "Data Deleted", Toast.LENGTH_LONG).show();
                         else
                             Toast.makeText(getActivity(), "Data Not Deleted", Toast.LENGTH_LONG).show();
@@ -98,7 +98,7 @@ public class TestFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
 
-                        Cursor res = myDb.getBeginnerAndEquipmentData();
+                        Cursor res = myDb.getBeginnerAndNoEquipmentData();
                         if(res.getCount() == 0){
                             //show message
                             showMessage("error","Nothing found");

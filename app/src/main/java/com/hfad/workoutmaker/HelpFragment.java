@@ -20,13 +20,10 @@ public class HelpFragment extends Fragment {
         // Required empty public constructor
     }
 
-
+//onCreate
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
     }
 
     @Override
