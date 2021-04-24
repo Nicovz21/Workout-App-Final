@@ -34,8 +34,8 @@
         android:label="fragment_preference"
         tools:layout="@layout/fragment_preference" >
         <action
-            android:id="@+id/action_preferenceFragment_to_workoutFragment"
-            app:destination="@id/workoutFragment" />
+            android:id="@+id/action_preferenceFragment_to_testCardViewFragment"
+            app:destination="@id/testCardViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/helpFragment"
@@ -48,7 +48,8 @@
         android:label="fragment_bmi"
         tools:layout="@layout/fragment_bmi" />
     <fragment
-        android:id="@+id/workoutFragment"
-        android:name="com.hfad.workoutmaker.WorkoutFragment"
-        android:label="WorkoutFragment" />
+        android:id="@+id/testCardViewFragment"
+        android:name="com.hfad.workoutmaker.TestCardViewFragment"
+        android:label="fragment_test_card_view"
+        tools:layout="@layout/fragment_test_card_view" />
 </navigation>

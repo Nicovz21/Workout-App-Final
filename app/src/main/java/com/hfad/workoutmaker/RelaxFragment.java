@@ -1,10 +1,13 @@
 package com.hfad.workoutmaker;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -19,6 +22,7 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
     public RelaxFragment() {
         // Required empty public constructor
     }
+
 
 
     @Override
@@ -46,6 +50,11 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
             case R.id.one_day:
                 navController.navigate(R.id.action_relaxFragment_to_preferenceFragment);
                 daysOff = 1;
+                //pass data from one fragment to another
+                Bundle bundle = new Bundle();
+                bundle.putInt("days off", daysOff);
+                //setup fragment we are sending the bundle too
+
 
                 break;
             case R.id.two_days:
