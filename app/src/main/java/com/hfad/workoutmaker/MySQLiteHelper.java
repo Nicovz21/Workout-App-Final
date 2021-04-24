@@ -52,23 +52,29 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         else
             return true;
     }
+    //if someone is not experienced and does not own weights
+    public Cursor getBeginnerAndNoEquipmentData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.query(TABLE_EXERCISES,new String[]{COLUMN_ID,COLUMN_EXPERIENCE, COLUMN_EQUIPMENT, COLUMN_WORKOUT}, COLUMN_EXPERIENCE + "=?" + " AND" +" "+ COLUMN_EQUIPMENT + "=?",new String[]{"beginner","no weights"},null,null,null);
+       return res;
+    }
+    //if someone is not experienced and does own weights
     public Cursor getBeginnerAndEquipmentData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        //Cursor res = db.rawQuery("SELECT equipment, experience FROM exercises WHERE experience = ? AND equipment = ?", new String[] {"beginner", "weights"});
-        Cursor res = db.rawQuery("select * from "  + TABLE_EXERCISES, null);
-        Cursor two = db.query(TABLE_EXERCISES,new String[]{COLUMN_ID,COLUMN_EXPERIENCE, COLUMN_EQUIPMENT, COLUMN_WORKOUT}, COLUMN_EXPERIENCE + "=?" + " AND" +" "+ COLUMN_EQUIPMENT + "=?",new String[]{"beginner","no weights"},null,null,null);
-//        if (res.moveToFirst()) {
-//            return res;
-//        }
-
-       return two;
-
+        Cursor res = db.query(TABLE_EXERCISES,new String[]{COLUMN_ID,COLUMN_EXPERIENCE, COLUMN_EQUIPMENT, COLUMN_WORKOUT}, COLUMN_EXPERIENCE + "=?" + " AND" +" "+ COLUMN_EQUIPMENT + "=?",new String[]{"beginner","weights"},null,null,null);
+        return res;
     }
-    public Cursor getBeginnerData(){
+    //if someone is experienced and does not own weights
+    public Cursor getExperiencedAndNoEquipmentData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor trytwo = db.query("exercises",new String[]{"experience"}, "experience=?",new String[]{"beginner"},null,null,null);
-        Cursor res = db.rawQuery("select " + COLUMN_WORKOUT+ " from "  + TABLE_EXERCISES, null);
-        return trytwo;
+        Cursor res = db.query(TABLE_EXERCISES,new String[]{COLUMN_ID,COLUMN_EXPERIENCE, COLUMN_EQUIPMENT, COLUMN_WORKOUT}, COLUMN_EXPERIENCE + "=?" + " AND" +" "+ COLUMN_EQUIPMENT + "=?",new String[]{"experienced","none"},null,null,null);
+        return res;
+    }
+    //if someone is experienced and does own weights
+    public Cursor getExperiencedAndEquipmentData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.query(TABLE_EXERCISES,new String[]{COLUMN_ID,COLUMN_EXPERIENCE, COLUMN_EQUIPMENT, COLUMN_WORKOUT}, COLUMN_EXPERIENCE + "=?" + " AND" +" "+ COLUMN_EQUIPMENT + "=?",new String[]{"experienced","weights"},null,null,null);
+        return res;
     }
     public Integer deleteData(String id){
         SQLiteDatabase db = this.getWritableDatabase();

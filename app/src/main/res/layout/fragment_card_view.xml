@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#161616"
     android:padding="24dp"
-    tools:context=".TestCardViewFragment">
+    tools:context=".CardViewFragment">
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Food"
+        android:text="Workout"
         android:textColor="#ff9800"
         android:textSize="24dp"
         />
@@ -25,7 +25,7 @@
         android:layout_marginLeft="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Menu"
+        android:text="Schedule"
         android:textSize="24dp"
         />
 </LinearLayout>
