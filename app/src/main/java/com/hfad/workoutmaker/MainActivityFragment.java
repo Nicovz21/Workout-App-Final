@@ -26,7 +26,13 @@ import java.util.List;
 
 public class MainActivityFragment extends Fragment implements View.OnClickListener{
     NavController navController = null;
+
+    public boolean isExperienced() {
+        return experienced;
+    }
+
     public boolean experienced;
+
     private  WorkoutsDataSource dataSource;
     private MainActivityListenser mActivity;
 
@@ -49,6 +55,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         //variable for myActivity
         Activity myActivity = getActivity();
+
             //create inflater
             View view =inflater.inflate(R.layout.fragment_main_activity, container, false);
             // ... rest of body of onCreateView() ...
