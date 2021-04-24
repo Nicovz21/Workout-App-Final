@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#161616"
     android:padding="24dp"
-    tools:context=".CardViewFragment">
+    tools:context=".TestCardViewFragment">
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -16,23 +16,20 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Workout"
-        android:textColor="#00FF00"
+        android:text="Here are your weekly workouts:"
+        android:textColor="#3aa8c1"
         android:textSize="24dp"
         />
-    <TextView
-        android:textColor="#fff"
-        android:layout_marginLeft="4dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Schedule"
-        android:textSize="24dp"
-        />
+
 </LinearLayout>
 
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
+    android:layout_margin="5dp"
     app:cardCornerRadius="8dp"
+    app:cardElevation="8dp"
+    app:cardMaxElevation="10dp"
+    app:cardPreventCornerOverlap="true"
     android:layout_height="wrap_content">
     <LinearLayout
         android:padding="12dp"
@@ -48,7 +45,7 @@
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:textColor="#F22F11"
+                    android:textColor="#080808"
                     android:textSize="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,7 +56,7 @@
                     android:layout_width="314dp"
                     android:layout_height="76dp"
                     android:text="Rest day"
-                    android:textColor="#F22F11"
+                    android:textColor="#080808"
                     android:textSize="10dp" />
 
             </LinearLayout>
@@ -70,7 +67,11 @@
 </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
+        android:layout_margin="5dp"
         app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="10dp"
+        app:cardPreventCornerOverlap="true"
         android:layout_height="wrap_content">
         <LinearLayout
             android:padding="12dp"
@@ -92,7 +93,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tuesday"
-                        android:textColor="#F22F11"
+                        android:textColor="#080808"
                         android:textSize="15dp" />
 
                     <TextView
@@ -100,7 +101,7 @@
                         android:layout_width="336dp"
                         android:layout_height="51dp"
                         android:text="rest day"
-                        android:textColor="#F22F11"
+                        android:textColor="#080808"
                         android:textSize="10dp" />
 
                 </LinearLayout>
@@ -111,7 +112,11 @@
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
+        android:layout_margin="5dp"
         app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="10dp"
+        app:cardPreventCornerOverlap="true"
         android:layout_height="wrap_content">
         <LinearLayout
             android:padding="12dp"
@@ -133,7 +138,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Wednesday"
-                        android:textColor="#F22F11"
+                        android:textColor="#080808"
                         android:textSize="15dp" />
 
                     <TextView
@@ -141,7 +146,7 @@
                         android:layout_width="330dp"
                         android:layout_height="58dp"
                         android:text="rest day"
-                        android:textColor="#F22F11"
+                        android:textColor="#080808"
                         android:textSize="10dp" />
 
                 </LinearLayout>
@@ -152,7 +157,11 @@
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
+        android:layout_margin="5dp"
         app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="10dp"
+        app:cardPreventCornerOverlap="true"
         android:layout_height="wrap_content">
         <LinearLayout
             android:padding="12dp"
@@ -174,7 +183,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Thursday"
-                        android:textColor="#F22F11"
+                        android:textColor="#080808"
                         android:textSize="15dp" />
 
                     <TextView
@@ -182,7 +191,7 @@
                         android:layout_width="323dp"
                         android:layout_height="75dp"
                         android:text="rest day"
-                        android:textColor="#F22F11"
+                        android:textColor="#080808"
                         android:textSize="10dp" />
 
                 </LinearLayout>
@@ -193,7 +202,11 @@
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
+        android:layout_margin="5dp"
         app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="10dp"
+        app:cardPreventCornerOverlap="true"
         android:layout_height="wrap_content">
         <LinearLayout
             android:padding="12dp"
@@ -215,7 +228,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Friday"
-                        android:textColor="#F22F11"
+                        android:textColor="#080808"
                         android:textSize="15dp" />
 
                     <TextView
@@ -223,7 +236,7 @@
                         android:layout_width="336dp"
                         android:layout_height="48dp"
                         android:text="rest day"
-                        android:textColor="#F22F11"
+                        android:textColor="#080808"
                         android:textSize="10dp" />
 
                 </LinearLayout>
