@@ -19,11 +19,11 @@
 
     <fragment
         android:id="@+id/fragment"
-        class="com.hfad.workoutmaker.RelaxFragment"
+        class="com.hfad.workoutmaker.TestFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:navGraph="@navigation/nav_graph"
-        tools:layout="@layout/fragment_relax" />
+        tools:layout="@layout/fragment_test" />
 
 
 

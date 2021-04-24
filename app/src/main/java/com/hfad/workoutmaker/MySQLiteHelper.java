@@ -46,6 +46,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_EXERCISES);
         onCreate(db);
     }
+    //public void onSelect(SQLiteDatabase db, )
 //    private static void insertWorkout(SQLiteDatabase db, String workout, String experience, String equipment){
 //        ContentValues workoutValues = new ContentValues();
 //        workoutValues.put("EXPERIENCE", experience);

@@ -21,41 +21,25 @@
 
     <ImageView
         android:id="@+id/no_weights"
-        android:layout_width="150dp"
-        android:layout_height="244dp"
+        android:layout_width="147dp"
+        android:layout_height="216dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="54dp"
         android:src="@drawable/noweightssmaller"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/next_preference"
+
         app:layout_constraintTop_toBottomOf="@+id/question_three" />
+
 
     <ImageView
         android:id="@+id/weights"
         android:layout_width="153dp"
         android:layout_height="225dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginTop="36dp"
         android:src="@drawable/weightssmaller"
-        app:layout_constraintBottom_toTopOf="@+id/next_preference"
-        app:layout_constraintEnd_toStartOf="@+id/next_preference"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question_three" />
-
-    <Button
-        android:id="@+id/next_preference"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="266dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/no_weights"
-        app:layout_constraintStart_toEndOf="@+id/weights"
         app:layout_constraintTop_toBottomOf="@+id/question_three" />
 
     <TextView
