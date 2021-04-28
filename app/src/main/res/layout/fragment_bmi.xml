@@ -9,13 +9,14 @@
 
     <ImageView
         android:id="@+id/bmi_chart"
-        android:layout_width="427dp"
-        android:layout_height="300dp"
+        android:layout_width="398dp"
+        android:layout_height="265dp"
         android:layout_marginTop="94dp"
         android:layout_marginBottom="27dp"
         android:src="@drawable/bmichartsmaller"
         app:layout_constraintBottom_toTopOf="@+id/header"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,25 +70,9 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="13dp"
         android:text="@string/bmi_info_three"
-        app:layout_constraintBottom_toTopOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fact_two" />
-
-    <Button
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="27dp"
-        android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fact_three" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

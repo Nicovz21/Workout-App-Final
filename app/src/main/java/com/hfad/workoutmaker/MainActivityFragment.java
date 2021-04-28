@@ -1,11 +1,13 @@
 package com.hfad.workoutmaker;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.ShareActionProvider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 import androidx.navigation.NavController;
@@ -14,19 +16,21 @@ import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.List;
 
 
 public class MainActivityFragment extends Fragment implements View.OnClickListener{
     NavController navController = null;
-
+    private ShareActionProvider provider;
 
     public boolean experienced;
 
@@ -52,6 +56,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         //variable for myActivity
         Activity myActivity = getActivity();
+
 
             //create inflater
             View view =inflater.inflate(R.layout.fragment_main_activity, container, false);
@@ -94,5 +99,30 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         }
 
     }
+
+//    //add ifs for the items being selected
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        int id = item.getItemId();
+//        switch (id) {
+//            case R.id.help:
+//              System.out.println("help screen");
+//                break;
+//            case R.id.bmi:
+//                Toast.makeText(getActivity(),"help",Toast.LENGTH_LONG).show();
+//                //send user to help/info screen
+//                navController.navigate(R.id.action_mainActivityFragment_to_bmiFragment);
+//                break;
+//            case R.id.share:
+//                Intent intent = new Intent(Intent.ACTION_SEND);
+//                intent.setType("text/plain");
+//                intent.putExtra(intent.EXTRA_TEXT, "this is a message for you");
+//                provider.setShareIntent(intent);
+//                break;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
 }

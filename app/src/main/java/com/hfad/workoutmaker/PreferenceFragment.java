@@ -61,6 +61,7 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                 bundle.putInt("days off", daysOff);
                 bundle.putBoolean("experience", experienced);
                 navController.navigate(R.id.action_preferenceFragment_to_testCardViewFragment, bundle);
+                //navController.navigate(R.id.action_preferenceFragment_to_testFragment, bundle);
                 break;
             case R.id.no_weights:
                 //bundle for transporting boolean
@@ -70,7 +71,8 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
                 bundle.putBoolean("weights", weights);
                 bundle.putInt("days off", daysOff);
                 bundle.putBoolean("experience", experienced);
-                navController.navigate(R.id.action_preferenceFragment_to_testCardViewFragment, bundle);
+               navController.navigate(R.id.action_preferenceFragment_to_testCardViewFragment, bundle);
+                //navController.navigate(R.id.action_preferenceFragment_to_testFragment, bundle);
                 break;
 
         }

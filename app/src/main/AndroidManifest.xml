@@ -9,13 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkoutMaker">
-        <activity android:name=".CardViewActivity"></activity>
+        <activity android:name=".CardViewActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
         <activity android:name=".TestActivity" />
         <activity android:name=".BmiActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".WorkoutActivity" />
-        <activity android:name=".RelaxActivity" />
-        <activity android:name=".PreferenceActivity" />
+        <activity android:name=".RelaxActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".PreferenceActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
