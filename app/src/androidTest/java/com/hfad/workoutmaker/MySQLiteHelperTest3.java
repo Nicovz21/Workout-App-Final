@@ -52,13 +52,11 @@ public class MySQLiteHelperTest3 extends TestCase {
 
         workoutID = db.insert(MySQLiteHelper.TABLE_EXERCISES, null, contentValues);
 
-
-  //      Cursor cursor = db.query(MySQLiteHelper.TABLE_EXERCISES, null,
-  //              null,null,null,null,null);
-
-        Cursor cursor = db.query(MySQLiteHelper.TABLE_EXERCISES, new String[] {MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_EXPERIENCE, MySQLiteHelper.COLUMN_EQUIPMENT, MySQLiteHelper.COLUMN_WORKOUT}, MySQLiteHelper.COLUMN_ID + " = " + workoutID, null,null,null,null);
-
-        //call insert
+        Cursor cursor = db.query(MySQLiteHelper.TABLE_EXERCISES, new String[]
+                {MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_EXPERIENCE,
+                        MySQLiteHelper.COLUMN_EQUIPMENT, MySQLiteHelper.COLUMN_WORKOUT},
+                MySQLiteHelper.COLUMN_ID + " = " + workoutID,
+                null,null,null,null);
 
         assertTrue(cursor.moveToFirst());
 
