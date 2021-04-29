@@ -14,15 +14,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 //source for layout: https://www.youtube.com/watch?v=_QgsZ0xd00Q
 
 public class CardViewFragment extends Fragment {
-
+//initialize variables
     NavController navController = null;
     MySQLiteHelper myDb;
     TextView mondayText, tuesdayText, wedText, thursText, friText;
     int daysOff;
     Boolean weights;
+//getter for string of all workouts
+    public String getWorkoutList() {
+        return workoutList;
+    }
+
+    public String workoutList;
     public boolean experienced;
     public CardViewFragment() {
         // Required empty public constructor
@@ -97,6 +105,7 @@ public class CardViewFragment extends Fragment {
                     wedText.setText(buffer.toString());
                     thursText.setText(buffer.toString());
                     friText.setText(buffer.toString());
+                    workoutList = buffer.toString();
 
             }
 
@@ -118,6 +127,7 @@ public class CardViewFragment extends Fragment {
                 wedText.setText(buffer.toString());
                 thursText.setText(buffer.toString());
                 friText.setText(buffer.toString());
+                workoutList = buffer.toString();
             }
             myDb.close();
         }
@@ -137,6 +147,7 @@ public class CardViewFragment extends Fragment {
                 wedText.setText(buffer.toString());
                 thursText.setText(buffer.toString());
                 friText.setText(buffer.toString());
+                workoutList = buffer.toString();
             }
             myDb.close();
         }
@@ -156,6 +167,7 @@ public class CardViewFragment extends Fragment {
                 wedText.setText(buffer.toString());
                 thursText.setText(buffer.toString());
                 friText.setText(buffer.toString());
+                workoutList = buffer.toString();
             }
             myDb.close();
         }

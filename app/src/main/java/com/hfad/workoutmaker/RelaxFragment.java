@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -33,6 +34,7 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         experienced = getArguments().getBoolean("experience");
+
     }
 
 //
@@ -53,10 +55,11 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
 
         return v;
     }
-
+//make on click events for the days selected
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            //if one day is selected send all the data that came prior and the day selected as an int
             case R.id.one_day:
                 Bundle bundle = new Bundle();
                 daysOff = 1;
@@ -65,6 +68,7 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
                 navController.navigate(R.id.action_relaxFragment_to_preferenceFragment, bundle);
 
                 break;
+            //if two days is selected send all the data that came prior and the day selected as an int
             case R.id.two_days:
                 bundle = new Bundle();
                 daysOff = 2;
@@ -73,6 +77,7 @@ public class RelaxFragment extends Fragment implements View.OnClickListener {
                 navController.navigate(R.id.action_relaxFragment_to_preferenceFragment,bundle);
 
                 break;
+            //if three days is selected send all the data that came prior and the day selected as an int
             case R.id.three_days:
                 bundle = new Bundle();
                 daysOff = 3;

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 
@@ -80,11 +81,10 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
             if(id == R.id.share){
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.putExtra(intent.EXTRA_TEXT, "this is a message for you");
+                intent.putExtra(intent.EXTRA_TEXT, "I just created a workout program for the week! Can't wait to get started! You can make one too with the Workout Maker App");
                 provider.setShareIntent(intent);
                 return super.onOptionsItemSelected(item);
         }

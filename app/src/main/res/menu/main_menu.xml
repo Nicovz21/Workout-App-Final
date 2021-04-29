@@ -11,12 +11,18 @@
           android:title="BMI Info"
           android:icon="@mipmap/ic_action_bmi"
           app:showAsAction="ifRoom"/>
+
     <item
         android:id="@+id/app_bar_search"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="Search"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.widget.SearchView" />
+    <item
+        android:id="@+id/mainActivityFragment"
+        android:title="Home"
+        android:icon="@mipmap/ic_back"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/share"
         android:title="Share"
@@ -25,4 +31,5 @@
 
 
     </item>
+
 </menu>
