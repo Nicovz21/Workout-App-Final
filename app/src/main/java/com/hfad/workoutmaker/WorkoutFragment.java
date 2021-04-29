@@ -17,7 +17,7 @@ import android.widget.Spinner;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MainActivityFragment#newInstance} factory method to
+ * Use the {@link MainActivityFragment# newInstance} factory method to
  * create an instance of this fragment.
  */
 public class WorkoutFragment extends Fragment {
@@ -55,6 +55,7 @@ public class WorkoutFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+     //   setContentView(R.layout.activity_workout);
 
     }
 
@@ -63,6 +64,7 @@ public class WorkoutFragment extends Fragment {
                              Bundle savedInstanceState) {
         try {
             //variable for myActivity
+
             Activity myActivity = getActivity();
             //create inflater
             View view =inflater.inflate(R.layout.fragment_workout, container, false);

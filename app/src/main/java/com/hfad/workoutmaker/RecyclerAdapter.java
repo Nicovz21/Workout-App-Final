@@ -4,11 +4,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.view.LayoutInflater;
-
+import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>  {
+
+    private Context context;
 
     private String[] weekdays = {"Monday",
             "Tuesday",
@@ -20,18 +22,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             "Item two details", "Item three details",
             "Item four details", "Item five details"};
 
+//    public RecyclerAdapter(Context context, String[] weekdays) {
+//        this.context = context;
+//        this.weekdays = weekdays;
+//    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.card_layout, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_layout, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int pos) {
-        viewHolder.weekdays.setText(weekdays[pos]);
+    //    viewHolder.weekdays.setText(weekdays[pos]);
        // viewHolder.workouts.setText(workouts[pos]);
     }
 
@@ -48,7 +54,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            weekdays = (TextView)weekdays.findViewById(R.id.weekday_text);
+          // weekdays = (TextView)weekdays.findViewById(R.id.weekday_text);
 //            workouts = (TextView)workouts.findViewById(R.id.workout_text);
         }
     }

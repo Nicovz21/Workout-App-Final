@@ -2,7 +2,7 @@
     <string name="app_name">WorkoutMaker</string>
     <string name="question_one">Which category do you fit into?</string>
     <string name="question_two">How many days off would you like in the weekdays?</string>
-    <string name="question_three">Which equipment do you own (weights or no weights)?</string>
+    <string name="question_three">What is your equipment preference?</string>
     //buttons
     <string name="next">Next</string>
     <string name="back">Back</string>
@@ -22,6 +22,13 @@
     <string name="bmi_info_one">Most muscle shows for men at around 3-15% body fat, for women 10-17%</string>
     <string name="bmi_info_two">Running long distance burns fat, while sprinting burns carbs</string>
     <string name="bmi_info_three">Core workouts alone do not result in abs, it also requires a low fat percentage and good dieting</string>
+    //bodies of text for help screen
+    <string name="help_level_question">How do I know what skill level I am?</string>
+    <string name="help_level_answer">If you have had experience in the gym for over a year, consider yourself experienced for this app</string>
+    <string name="help_rest_question">Why should I take rest days</string>
+    <string name="help_rest_answer">Rest days are needed for your body to build the muscle back after breaking it down. Also many people face burnout which drives a lot of people from sticking to a schedule</string>
+    <string name="help_image_sources_title">Image sources</string>
+    <string name="help_image_soruces">Kelly Sikkema, Nathan Dumlao, Logan Weaver, Roberto Nickson, Yuriy Bogdanov, Andrew H, Karsten Winegeart, Clique Images</string>
     //built by android studio
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>

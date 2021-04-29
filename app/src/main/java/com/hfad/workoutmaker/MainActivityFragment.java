@@ -1,11 +1,13 @@
 package com.hfad.workoutmaker;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.ShareActionProvider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 import androidx.navigation.NavController;
@@ -14,19 +16,24 @@ import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.List;
 
 
 public class MainActivityFragment extends Fragment implements View.OnClickListener{
     NavController navController = null;
+    private ShareActionProvider provider;
+
     public boolean experienced;
+
     private  WorkoutsDataSource dataSource;
     private MainActivityListenser mActivity;
 
@@ -49,16 +56,17 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         //variable for myActivity
         Activity myActivity = getActivity();
+
+
             //create inflater
             View view =inflater.inflate(R.layout.fragment_main_activity, container, false);
-            // ... rest of body of onCreateView() ...
             // Inflate the layout for this fragment
             return view;
 
 
     }
 
-
+//click listeners for images
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -67,21 +75,30 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         view.findViewById(R.id.ExperiencedImage).setOnClickListener(this);
 
     }
-
+//case by case on which image is clicked
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.BeginnerImage:
+                //bundle made to transport boolean
+                Bundle bundle = new Bundle();
+                //not experienced
                 experienced = false;
-                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment);
+                bundle.putBoolean("experience", experienced);
+                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment, bundle);
                 break;
             case R.id.ExperiencedImage:
+                //bundle made to transport boolean
+                bundle = new Bundle();
+                //experienced
                 experienced = true;
-                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment);
+                bundle.putBoolean("experience", experienced);
+                navController.navigate(R.id.action_mainActivityFragment_to_relaxFragment, bundle);
                 break;
 
         }
 
     }
+
 
 }

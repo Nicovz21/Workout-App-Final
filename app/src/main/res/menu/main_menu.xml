@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item android:id="@+id/helpFragment"
+          android:title="Help"
+        android:icon="@mipmap/ic_action_help"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/bmiFragment"
+          android:title="BMI Info"
+          android:icon="@mipmap/ic_action_bmi"
+          app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.widget.SearchView" />
+    <item
+        android:id="@+id/share"
+        android:title="Share"
+        app:showAsAction="ifRoom"
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider">
+
+
+    </item>
+</menu>
