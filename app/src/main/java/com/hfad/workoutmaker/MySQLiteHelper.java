@@ -76,6 +76,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         Cursor res = db.query(TABLE_EXERCISES,new String[]{COLUMN_ID,COLUMN_EXPERIENCE, COLUMN_EQUIPMENT, COLUMN_WORKOUT}, COLUMN_EXPERIENCE + "=?" + " AND" +" "+ COLUMN_EQUIPMENT + "=?",new String[]{"experienced","weights"},null,null,null);
         return res;
     }
+    public Cursor getAllWorkouts(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.query(TABLE_EXERCISES,new String[]{COLUMN_ID,COLUMN_EXPERIENCE, COLUMN_EQUIPMENT, COLUMN_WORKOUT}, null,null,null,null,null);
+        return res;
+    }
     //delete specific data in data table
     public Integer deleteData(String id){
         SQLiteDatabase db = this.getWritableDatabase();

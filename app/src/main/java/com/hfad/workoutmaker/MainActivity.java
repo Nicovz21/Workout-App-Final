@@ -29,6 +29,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity  {
     public static WorkoutsDataSource dataSource;
+    MySQLiteHelper myDb;
     private ShareActionProvider provider;
 
     @Override
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         setSupportActionBar(findViewById(R.id.toolbar));
         //setSupportActionBar(findViewById(R.id.toolbar));
+
 //un-comment to re-create the database
 //        dataSource = new WorkoutsDataSource(this);
 //        dataSource.open();

@@ -100,29 +100,5 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
 
     }
 
-//    //add ifs for the items being selected
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        int id = item.getItemId();
-//        switch (id) {
-//            case R.id.help:
-//              System.out.println("help screen");
-//                break;
-//            case R.id.bmi:
-//                Toast.makeText(getActivity(),"help",Toast.LENGTH_LONG).show();
-//                //send user to help/info screen
-//                navController.navigate(R.id.action_mainActivityFragment_to_bmiFragment);
-//                break;
-//            case R.id.share:
-//                Intent intent = new Intent(Intent.ACTION_SEND);
-//                intent.setType("text/plain");
-//                intent.putExtra(intent.EXTRA_TEXT, "this is a message for you");
-//                provider.setShareIntent(intent);
-//                break;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 
 }
