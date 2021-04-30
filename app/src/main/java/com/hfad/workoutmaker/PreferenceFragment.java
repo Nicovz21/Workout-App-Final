@@ -24,6 +24,7 @@ public class PreferenceFragment extends Fragment implements View.OnClickListener
     }
 
 
+
 //gets values from bundle for the user experience and user days off selected
     @Override
     public void onCreate(Bundle savedInstanceState) {
